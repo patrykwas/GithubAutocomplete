@@ -93,7 +93,10 @@ var body: some View {
 ### Custom row
 
 ```swift
-AutocompleteResultsView(viewModel: viewModel) { item in
+AutocompleteView(
+    searchProvider: GithubSearchProvider.searchProvider(),
+    strings: AutocompleteStrings(searchPlaceholder: "Search Github…", idleTitle: "Search Github")
+) { item in
     HStack {
         Text(item.title)
         Spacer()
